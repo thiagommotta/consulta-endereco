@@ -18,24 +18,16 @@ paths:
         schema:
           $ref: '#/components/schemas/ConsultaEnderecoRequest'
       responses:
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                type: string
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                type: string
         "200":
           description: OK
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Endereco'
+        "404":
+          description: Cep não encontrado
+        "400":
+          description: Requisição Inválida
 components:
   schemas:
     ConsultaEnderecoRequest:
