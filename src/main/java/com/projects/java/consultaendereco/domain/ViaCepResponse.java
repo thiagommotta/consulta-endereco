@@ -1,8 +1,10 @@
 package com.projects.java.consultaendereco.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class ViaCepResponse {
     private String cep;
     private String logradouro;

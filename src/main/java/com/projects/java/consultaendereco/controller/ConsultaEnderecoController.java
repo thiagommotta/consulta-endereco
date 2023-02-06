@@ -6,6 +6,7 @@ import com.projects.java.consultaendereco.service.ConsultaEnderecoService;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("consulta-endereco")
+@RequestMapping("/consulta-endereco")
 public class ConsultaEnderecoController {
-    private final ConsultaEnderecoService consultaService;
-
-    public ConsultaEnderecoController(ConsultaEnderecoService consultaService) {
-        this.consultaService = consultaService;
-    }
+    @Autowired
+    private ConsultaEnderecoService consultaService;
 
     @ApiResponses(value = {
             @ApiResponse(responseCode= "200"),
